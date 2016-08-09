@@ -10,6 +10,10 @@ a {
     color: #1950C6;
 }
 
-.timestamp {
+.post .timestamp {
     text-align: right;
+}
+
+.post .container {
+    max-width: 80.0rem;
 }
