@@ -14,7 +14,7 @@
     <!-- Header -->
     <div class="row">
         <div class="column timestamp">
-            <small>December 10, 2016</small>
+            <small>December 11, 2016</small>
         </div>
     </div> <!-- End Header -->
     <!-- Content -->
@@ -23,14 +23,33 @@
             <h2>Suggest</h2>
             <hr>
             <p>
-                A simple commandline tool to provide auto suggestions via <a href="https://www.microsoft.com/cognitive-services/en-us/bing-autosuggest-api"Bing Autosuggest API</a>.
+                A simple commandline tool to provide auto suggestions via <a href="https://www.microsoft.com/cognitive-services/en-us/bing-autosuggest-api">Bing Autosuggest API</a>.
+            </p>
+            <p>
+                The <a href="https://github.com/DevinCarr/Suggest">Github</a> if you would like to try it out!
             </p>
             <h4>Inspiration</h4>
             <p>
-                I found something similar the other day on HackerNews, but it used Google's auto-complete API. Since I will be joining the Bing team soon, why not see if they have an open API that can do the same thing. I did end up finding it on the <a href="https://www.microsoft.com/cognitive-services">Microsoft Cognitive Services website</a>. Thankfully it also provided a really simple JSON API to interface with.
+                I found something similar the other day on HackerNews, but it used Google's auto-complete API. Since I will be joining the Bing team soon, I decided to see if Bing has an open API that can do the same thing. <a href="https://www.microsoft.com/cognitive-services">Microsoft Cognitive Services</a> ended up having an Autosuggest API interface to. Thankfully it also provided a really simple JSON API to communicate with.
             </p>
             <p>
-                I recently had needed to use some JSON parsing in C++ and found a library by <a href="https://github.com/nlohmann/json">nlohmann</a>.
+                I recently needed to do some JSON parsing in C++ and found a wonderful library by <a href="https://github.com/nlohmann/json">nlohmann</a>. Thankfully it supported C++11 and was a simple drop-in header file.
+            </p>
+            <p>
+                This was also a great opportunity to learn how to make HTTP calls with a C++ library. Previously, I only had experience opening sockets and making TCP read/write operations. I decided to go with cURL since the I needed the ability to change the headers for the API call for the security token. Thankfully cURL has an "Easy Interface" and plenty of good examples.
+            </p>
+            <h4>Example</h4>
+            <pre> $ s hello world
+ Suggest (v1):
+ "hello world"
+ "hello world java"
+ "hello world history"
+ "hello world c++"
+ "hello world example"
+ "hello world baby"
+ "hello world lyrics"
+ "helloworld inc"
+            </pre>
 		</div>
     </div> <!-- End Content -->
     <!-- Footer --> 
