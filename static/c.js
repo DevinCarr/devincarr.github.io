@@ -1,6 +1,7 @@
 var key = 'COUNTER_KEY',
     count = document.getElementById('countText'),
-    counterButton = document.getElementById('counterButton'),
+    moreButton = document.getElementById('moreButton'),
+    lessButton = document.getElementById('lessButton'),
     resetButton = document.getElementById('resetButton');
 
 localforage.setDriver([
@@ -22,13 +23,26 @@ localforage.setDriver([
     });
 });
 
-counterButton.addEventListener('click', function(event) {
+moreButton.addEventListener('click', function(event) {
   localforage.getItem(key).then(function(readValue) {
     var value = readValue + 1;
     count.innerHTML = value; 
     return localforage.setItem(key,value);
   }).then(function() {
     console.log('Incremented value');
+  }).catch(function(err) {
+    console.log('Error: ', err);
+  });
+});
+
+lessButton.addEventListener('click', function(event) {
+  localforage.getItem(key).then(function(readValue) {
+    var value = readValue - 1;
+    if (value < 0) value = 0;
+    count.innerHTML = value; 
+    return localforage.setItem(key,value);
+  }).then(function() {
+    console.log('Decremented value');
   }).catch(function(err) {
     console.log('Error: ', err);
   });
