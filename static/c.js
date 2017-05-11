@@ -2,28 +2,40 @@ var key = 'COUNTER_KEY',
     count = document.getElementById('countText'),
     moreButton = document.getElementById('moreButton'),
     lessButton = document.getElementById('lessButton'),
-    resetButton = document.getElementById('resetButton');
+    resetButton = document.getElementById('resetButton'),
+    secretButton = document.getElementById('secret'),
+    container = document.getElementById('container');
 
-localforage.setDriver([
-  localforage.INDEXEDDB,
-  localforage.WEBSQL,
-  localforage.LOCALSTORAGE
-  ]).then(function() {
-    console.log('Using:' + localforage.driver());
-    localforage.getItem(key).then(function(readValue) {
-      if (readValue == null) {
-        localforage.setItem(key, 0).then(function() {
-          console.log('DB new, set ' + key + ' as ' + 0);
-          count.innerHTML = 0;
-        });
-      } else {
-        count.innerHTML = readValue; 
-        console.log('Read: ', readValue);
-      }
-    }).catch(function(err) {
-      console.log("Error:");
-      console.log(err);
+var lfConfig = {
+  driver: [
+    localforage.INDEXEDDB,
+    localforage.WEBSQL,
+    localforage.LOCALSTORAGE
+  ],
+  name: 'localforage',
+  version: '1',
+  storeName: 'cv1',
+};
+
+// Initialize Localforage
+localforage.config(lfConfig);
+
+// Check if the Key exists
+localforage.getItem(key).then(function(readValue) {
+  if (readValue == null) {
+    // if not, load it for first run
+    localforage.setItem(key, 0).then(function() {
+      console.log('DB new, set ' + key + ' as ' + 0);
+      count.innerHTML = 0;
     });
+  } else {
+    // load old value into element
+    count.innerHTML = readValue; 
+    console.log('Read: ', readValue);
+  }
+}).catch(function(err) {
+  console.log("Error:");
+  console.log(err);
 });
 
 moreButton.addEventListener('click', function(event) {
@@ -58,5 +70,16 @@ resetButton.addEventListener('click', function(event) {
   }).catch(function(err) {
     console.log('Error: ', err);
   });
+});
+
+secretButton.addEventListener('click', function(event) {
+  var secret = document.createElement('div');
+  var secretChild = document.createElement('div');
+  secret.style.color = "grey";
+  secret.classList.add("row");
+  secretChild.classList.add("column");
+  secretChild.innerHTML = "driver: \"" + localforage.driver() + "\", name: \"" + lfConfig.storeName + "\", key: \"" + key + "\"";
+  secret.appendChild(secretChild);
+  container.appendChild(secret);
 });
 
