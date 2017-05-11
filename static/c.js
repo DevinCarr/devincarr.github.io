@@ -11,13 +11,16 @@ localforage.setDriver([
   ]).then(function() {
     console.log('Using:' + localforage.driver());
     localforage.getItem(key).then(function(readValue) {
-      count.innerHTML = readValue; 
-      console.log('Read: ', readValue);
+      if (readValue == null) {
+        localforage.setItem(key, 0).then(function() {
+          console.log('DB new, set ' + key + ' as ' + 0);
+          count.innerHTML = 0;
+        });
+      } else {
+        count.innerHTML = readValue; 
+        console.log('Read: ', readValue);
+      }
     }).catch(function(err) {
-      localforage.setItem(key, 0).then(function() {
-        console.log('Set: ' + 0);
-	count.innerHTML = 0;
-      });
       console.log("Error:");
       console.log(err);
     });
