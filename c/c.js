@@ -26,13 +26,12 @@
     if (readValue == null) {
       // if not, load it for first run
       localforage.setItem(key, 0).then(function() {
-        console.log('DB new, set ' + key + ' as ' + 0);
+        // console.log('DB new, set ' + key + ' as ' + 0);
         count.innerHTML = 0;
       });
     } else {
       // load old value into element
       count.innerHTML = readValue; 
-      console.log('Read: ', readValue);
     }
   }).catch(function(err) {
     console.log("Error:");
@@ -45,7 +44,7 @@
       count.innerHTML = value; 
       return localforage.setItem(key,value);
     }).then(function() {
-      console.log('Incremented value');
+      // console.log('Incremented value');
     }).catch(function(err) {
       console.log('Error: ', err);
     });
@@ -58,7 +57,7 @@
       count.innerHTML = value; 
       return localforage.setItem(key,value);
     }).then(function() {
-      console.log('Decremented value');
+      // console.log('Decremented value');
     }).catch(function(err) {
       console.log('Error: ', err);
     });
@@ -67,7 +66,7 @@
   resetButton.addEventListener('click', function(event) {
     localforage.setItem(key,0).then(function(readValue) {
       count.innerHTML = 0; 
-      console.log('Reset value');
+      // console.log('Reset value');
     }).catch(function(err) {
       console.log('Error: ', err);
     });
@@ -76,5 +75,16 @@
   secretButton.addEventListener('click', function(event) {
     secretText.innerHTML = "driver: \"" + localforage.driver() + "\", name: \"" + lfConfig.storeName + "\", key: \"" + key + "\"";
   });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/c/sw.js').then(function(registration) {
+        // Registration was successful
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
 })();
 
