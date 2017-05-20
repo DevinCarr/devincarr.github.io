@@ -1,5 +1,6 @@
 (function() {
-  var key = 'COUNTER_KEY',
+  'use strict';
+  const key = 'COUNTER_KEY',
     count = document.getElementById('countText'),
     moreButton = document.getElementById('moreButton'),
     lessButton = document.getElementById('lessButton'),
@@ -7,7 +8,7 @@
     secretButton = document.getElementById('secretButton'),
     secretText = document.getElementById('secretText');
 
-  var lfConfig = {
+  const lfConfig = {
     driver: [
       localforage.INDEXEDDB,
       localforage.WEBSQL,
@@ -18,14 +19,16 @@
     storeName: 'cv2',
   };
 
+  let debugToggle = false;
+
   // Initialize Localforage
   localforage.config(lfConfig);
 
   // Check if the Key exists
-  localforage.getItem(key).then(function(readValue) {
+  localforage.getItem(key).then(readValue => {
     if (readValue == null) {
       // if not, load it for first run
-      localforage.setItem(key, 0).then(function() {
+      localforage.setItem(key, 0).then(() => {
         // console.log('DB new, set ' + key + ' as ' + 0);
         count.innerHTML = 0;
       });
@@ -33,54 +36,61 @@
       // load old value into element
       count.innerHTML = readValue; 
     }
-  }).catch(function(err) {
+  }).catch(err => {
     console.log("Error:");
     console.log(err);
   });
 
-  moreButton.addEventListener('click', function(event) {
-    localforage.getItem(key).then(function(readValue) {
+  moreButton.addEventListener('click', event => {
+    localforage.getItem(key).then(readValue => {
       var value = readValue + 1;
       count.innerHTML = value; 
       return localforage.setItem(key,value);
-    }).then(function() {
+    }).then(() => {
       // console.log('Incremented value');
-    }).catch(function(err) {
+    }).catch(err => {
       console.log('Error: ', err);
     });
   });
 
-  lessButton.addEventListener('click', function(event) {
-    localforage.getItem(key).then(function(readValue) {
+  lessButton.addEventListener('click', event => {
+    localforage.getItem(key).then(readValue => {
       var value = readValue - 1;
       if (value < 0) value = 0;
       count.innerHTML = value; 
       return localforage.setItem(key,value);
-    }).then(function() {
+    }).then(() => {
       // console.log('Decremented value');
-    }).catch(function(err) {
+    }).catch(err => {
       console.log('Error: ', err);
     });
   });
 
-  resetButton.addEventListener('click', function(event) {
-    localforage.setItem(key,0).then(function(readValue) {
+  resetButton.addEventListener('click', event => {
+    localforage.setItem(key,0).then(readValue => {
       count.innerHTML = 0; 
       // console.log('Reset value');
-    }).catch(function(err) {
+    }).catch(err => {
       console.log('Error: ', err);
     });
   });
 
-  secretButton.addEventListener('click', function(event) {
-    secretText.innerHTML = "driver: \"" + localforage.driver() + "\", name: \"" + lfConfig.storeName + "\", key: \"" + key + "\"";
+  secretButton.addEventListener('click', event => {
+    if (debugToggle == false) {
+      secretText.innerHTML = "driver: \"" + localforage.driver() + "\", name: \"" + lfConfig.storeName + "\", key: \"" + key + "\"";
+      debugToggle = true;
+    } else {
+      secretText.innerHTML = "";
+      debugToggle = false;
+    }
   });
 
+// Setup Service Worker for PWA
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/c/sw.js').then(function(registration) {
+      navigator.serviceWorker.register('/c/sw.js').then(registration => {
         // Registration was successful
-      }, function(err) {
+      }, err => {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
       });
