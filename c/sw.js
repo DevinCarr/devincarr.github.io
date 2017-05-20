@@ -63,7 +63,7 @@ self.addEventListener('fetch', event => {
 
             caches.open(CACHE_NAME)
               .then(cache => {
-                cache.put(event.request, responseToCache);
+                return cache.put(event.request, responseToCache);
               }).catch(error => {
                 console.log(error);
               });
