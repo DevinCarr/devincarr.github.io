@@ -2,8 +2,18 @@ body {
     padding-top:3%;
 }
 
+.head-img {
+    border-radius: 8px;
+}
+
 .leftside {
     text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+    p.intro {
+        padding-bottom: 5em;
+    }
 }
 
 a {
