@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="canonical" href="https://devincarr.com"/>
-        <link rel="stylesheet" href="/static/milligram.min.css">
-        <link rel="stylesheet" href="/static/main.css">
-		<title>Devin Carr - Suggest</title>
-	</head>
-	<body class="post">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="canonical" href="https://devincarr.com" />
+    <link rel="stylesheet" href="/static/milligram.min.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <title>Devin Carr - Suggest</title>
+</head>
+
+<body class="post">
     <div class="container">
-    <!-- Header -->
-    <div class="row">
-        <div class="column timestamp">
-            <small>December 11, 2016</small>
-        </div>
-    </div> <!-- End Header -->
-    <!-- Content -->
-	<div class="row">
-		<div class="column">
-            <h2>Suggest</h2>
-            <hr>
-            <p>
-                A simple commandline tool to provide auto suggestions via <a href="https://www.microsoft.com/cognitive-services/en-us/bing-autosuggest-api">Bing Autosuggest API</a>.
-            </p>
-            <p>
-                The <a href="https://github.com/DevinCarr/Suggest">Github</a> if you would like to try it out!
-            </p>
-            <h4>Inspiration</h4>
-            <p>
-                I found something similar the other day on HackerNews, but it used Google's auto-complete API. Since I will be joining the Bing team soon, I decided to see if Bing has an open API that can do the same thing. <a href="https://www.microsoft.com/cognitive-services">Microsoft Cognitive Services</a> ended up having an Autosuggest API interface to. Thankfully it also provided a really simple JSON API to communicate with.
-            </p>
-            <p>
-                I recently needed to do some JSON parsing in C++ and found a wonderful library by <a href="https://github.com/nlohmann/json">nlohmann</a>. Thankfully it supported C++11 and was a simple drop-in header file.
-            </p>
-            <p>
-                This was also a great opportunity to learn how to make HTTP calls with a C++ library. Previously, I only had experience opening sockets and making TCP read/write operations. I decided to go with cURL since the I needed the ability to change the headers for the API call for the security token. Thankfully cURL has an "Easy Interface" and plenty of good examples.
-            </p>
-            <h4>Example</h4>
-            <pre> $ s hello world
+        <!-- Header -->
+        <div class="row">
+            <div class="column timestamp">
+                <small>December 11, 2016</small>
+            </div>
+        </div> <!-- End Header -->
+        <!-- Content -->
+        <div class="row">
+            <div class="column">
+                <h2>Suggest</h2>
+                <hr>
+                <p>
+                    A simple commandline tool to provide auto suggestions via <a href="https://www.microsoft.com/cognitive-services/en-us/bing-autosuggest-api">Bing
+                        Autosuggest API</a>.
+                </p>
+                <p>
+                    The <a href="https://github.com/DevinCarr/Suggest">Github</a> if you would like to try it out!
+                </p>
+                <h4>Inspiration</h4>
+                <p>
+                    I found something similar the other day on HackerNews, but it used Google's auto-complete API.
+                    Since I will be joining the Bing team soon, I decided to see if Bing has an open API that can do
+                    the same thing. <a href="https://www.microsoft.com/cognitive-services">Microsoft Cognitive Services</a>
+                    ended up having an Autosuggest API interface to. Thankfully it also provided a really simple JSON
+                    API to communicate with.
+                </p>
+                <p>
+                    I recently needed to do some JSON parsing in C++ and found a wonderful library by <a href="https://github.com/nlohmann/json">nlohmann</a>.
+                    Thankfully it supported C++11 and was a simple drop-in header file.
+                </p>
+                <p>
+                    This was also a great opportunity to learn how to make HTTP calls with a C++ library. Previously, I
+                    only had experience opening sockets and making TCP read/write operations. I decided to go with cURL
+                    since the I needed the ability to change the headers for the API call for the security token.
+                    Thankfully cURL has an "Easy Interface" and plenty of good examples.
+                </p>
+                <h4>Example</h4>
+                <pre> $ s hello world
  Suggest (v1):
  "hello world"
  "hello world java"
@@ -49,19 +60,23 @@
  "hello world lyrics"
  "helloworld inc"
             </pre>
-		</div>
-    </div> <!-- End Content -->
-    <!-- Footer --> 
-    <div class="row">
-        <div class="column">
-            <small>
-                Devin Carr /
-                <a href="/">Home</a>
-                /
-                <a href="/post/">Posts</a>
-            </small>
-        </div>
-    </div> <!-- End Footer -->
+            </div>
+        </div> <!-- End Content -->
+        <!-- Footer -->
+        <div class="row">
+            <div class="column">
+                <small>
+                    Devin Carr /
+                    <a href="/">Home</a>
+                    /
+                    <a href="/post/">Posts</a>
+                </small>
+            </div>
+            <div class="column">
+                <div class="copyright">Copyright Devin Carr © 2019</div>
+            </div>
+        </div> <!-- End Footer -->
     </div>
-	</body>
+</body>
+
 </html>
