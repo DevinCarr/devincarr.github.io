@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="post container">
+    <!-- Content -->
+    <div class="row" style="margin-top: 1.6em">
+        <div class="column">
+            <article>
+                <header>
+                    <h2>Posts</h2>
+                </header>
+                <hr />
+            </article>
+            <ul>
+                <!-- Ranges through content/posts/*.md -->
+                {{ range .Pages }}
+                {{ .Render "summary" }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer.html" . }}
+{{ end }}

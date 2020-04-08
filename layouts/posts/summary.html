@@ -1,0 +1,15 @@
+<article class="post">
+    <header>
+        <div class="row">
+            <div class="column">
+                <a href='{{ .Permalink }}'><h4>{{ .Title }}</h4></a>
+            </div>
+            <div class="column timestamp">
+                <small>{{ .Date.Format "January 2, 2006" }}</small>
+            </div>
+        </div>
+    </header>
+    <p>
+    {{ .Summary }}
+    </p>
+</article>

@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="post container">
+    <!-- Header -->
+    <div class="row">
+        <div class="column timestamp">
+            <small>{{ .Date.Format "January 2, 2006" }}</small>
+        </div>
+    </div> <!-- End Header -->
+    <!-- Content -->
+    <div class="row">
+        <article class="column">
+            <h2>{{ .Title }}</h2>
+            <hr>
+            {{ .Content }}
+        </article>
+    </div> <!-- End Content -->
+</section>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer.html" . }}
+{{ end }}

@@ -1,0 +1,48 @@
+{{ define "main" }}
+<main aria-role="main" class="container">
+  <div class="row">
+    <!-- Left side -->
+    <div class="column leftside">
+      <img src="/me-min.jpg" width="200px" class="head-img" />
+      <p></p>
+      <h2>Devin Carr</h2>
+      <p></p>
+      <a href="http://www.linkedin.com/in/devincarr/">LinkedIn</a> /
+      <a href="https://github.com/DevinCarr">Github</a> /
+      <a href="/posts/">Posts</a>
+      <p></p>
+    </div> <!-- End Left side -->
+    <!-- Content -->
+    <div class="column column-75">
+      <h4>About</h4>
+      <p>
+        A developer in space, on a rock, hurtling around a star, making silicon do fancy stuff. I currently
+        work on the backend for <a
+          href="https://products.office.com/en-us/microsoft-teams/staff-scheduling-software">Microsoft Teams Shifts</a>.
+      </p>
+      <h4>Past Projects</h4>
+      <ul>
+        <li><a href="https://github.com/DevinCarr/Druid-like">Druid-like</a>: A RimWorld mod to add some druid-like
+          traits and features.</li>
+        <li><a href="https://github.com/DevinCarr/Dropoff">Dropoff</a>: A simple text-hosting server
+          written in dotnet core.</li>
+        <li><a href="/post/exoplanet-discovery.html">Research Project</a>: An Astrophysics research project
+          utilizing gravitational microlensing to discover exoplanets.</li>
+        <li><a href="/post/echo-a-chat-bot.html">Echo</a>: A Twitch.tv Chat Bot</li>
+      </ul>
+      <p>
+        There are other random projects on my <a href="https://github.com/DevinCarr">Github</a>.
+      </p>
+      
+      <h4>Recent Posts</h4>
+      <hr />
+      <div>
+        {{ range first 5 .Site.RegularPages }}
+        {{ .Render "summary" }}
+        {{ end }}
+      </div>
+      <div class="main-copyright">{{ .Site.Copyright }}</div>
+    </div> <!-- End Content -->
+  </div>
+</main>
+{{ end }}

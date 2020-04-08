@@ -1,0 +1,13 @@
+baseURL = "http://devincarr.com"
+languageCode = "en-us"
+title = "Devin Carr"
+copyright = "Copyright Devin Carr © 2020"
+summaryLength = 40
+
+[params]
+  description = "Devin Carr Personal Website"
+  images = []
+  title = "Devin Carr"
+
+[taxonomies]
+  series = "series"
