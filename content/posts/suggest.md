@@ -16,7 +16,7 @@ I recently needed to do some JSON parsing in C++ and found a wonderful library b
 This was also a great opportunity to learn how to make HTTP calls with a C++ library. Previously, I only had experience opening sockets and making TCP read/write operations. I decided to go with cURL since the I needed the ability to change the headers for the API call for the security token. Thankfully cURL has an "Easy Interface" and plenty of good examples.
 
 #### Example
-```
+```shell
 $ s hello world
 Suggest (v1):
 "hello world"
