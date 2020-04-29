@@ -1,7 +1,6 @@
 ---
 title: "\"nocommit\" Git Hook"
 date: 2020-04-27T21:40:02-07:00
-draft: true
 ---
 
 [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) are an interesting way to customize your daily git workflow. They can allow you to trigger on specific events (before and after) common tasks such as: committing (via 'pre-commit') and pushing (via 'pre-push'). Specific examples of how to run these each are located in your `.git/hooks/` folder with the extension `.sample`.
