@@ -21,11 +21,11 @@ The key here is to not allow myself to skip out on the last step which typically
 
 ## Why nocommit, why not TODO
 
-Initially I would have utilized the keyword TODO to accomplish the similar goal but because it is well known and already checked in, thus triggering too often. This already happens a bunch with the codebase I develop on for work. Mostly because previous engineers would commit their TODOs in and never following back up on the actual tasks assigning to themselves ad-hoc. This is a completely separate problem to solve, that might happen one day with a thorough clean up, but there is only so much time in the work day.
+Initially I would have utilized the keyword TODO to accomplish the similar goal but because it is well known. The problem is that it typically is already checked in at my work, thus triggering too often on changes that that aren't related to me. Mostly because previous engineers would commit their TODOs in and never follow back up on the actual tasks ascribed by the TODO. So for the sake of simplicity, I have opted to for a different keyword: `nocommit`.
 
 ## Source
 
-One of the main pre-requistes to utilizing this code is to have the latest PowerShell 7 installed and available on the path as `pwsh` (which is done by default when installed).
+A pre-requistes is to have the latest PowerShell 7 installed and available on the path as `pwsh` (which is done by default when installed).
 
 `.git/hooks/pre-commit`:
 
@@ -45,10 +45,10 @@ exit 0
 
 ### Example Output
 
-```shell
+```
 $ git commit -m "test"
 Error(pre-commit): 'nocommit's found in source:
 
-Database\\Program.cs:37:            // nocommit: correct this logger instance
-Database\\Program.cs:39:            // nocommit: expand comment
+Database\Program.cs:37:            // nocommit: correct this logger instance
+Database\Program.cs:39:            // nocommit: expand comment
 ```
