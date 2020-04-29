@@ -5,6 +5,10 @@ body {
     margin-bottom: 5rem;
 }
 
+code {
+    font-size: unset;
+}
+
 .head-img {
     border-radius: 8px;
 }
