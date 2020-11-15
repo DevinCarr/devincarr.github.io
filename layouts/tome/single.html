@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="post container">
+    <header class="row">
+        <div class="column">
+            <h1>{{ .Title }} {{ if (isset .Params "status") }}{{ partial "status.html" . }}{{ end }}</h1>
+            <hr>
+        </div>
+    </header>
+    <div class="row">
+        <div class="column">
+            {{ .Content }}
+        </div>
+        {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+        <aside class="column column-20">
+            {{ .TableOfContents }}
+        </aside>
+        {{ end }}
+    </div>
+</article>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer.html" . }}
+{{ end }}

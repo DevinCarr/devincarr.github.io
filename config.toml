@@ -8,6 +8,7 @@ summaryLength = 40
   description = "Devin Carr Personal Website"
   images = []
   title = "Devin Carr"
+  mainSections = ["posts"]
 
 [taxonomies]
   series = "series"

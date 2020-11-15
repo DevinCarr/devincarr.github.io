@@ -1,15 +1,12 @@
-<footer class="post container">
+<nav class="post container">
     <div class="row">
         <div class="column">
             <small>
                 {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
             </small>
         </div>
-        <div class="column">
-            <div class="copyright">{{ .Site.Copyright }}</div>
-        </div>
     </div>
-</footer>
+</nav>
 
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}

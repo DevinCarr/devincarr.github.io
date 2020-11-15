@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="post container">
+    <div class="row" style="margin-top: 1.6em">
+        <div class="column">
+            <header>
+                <h2>{{ .Title }}</h2>
+            </header>
+            <hr />
+            {{ .Content }}
+        </div>
+    </div>
+    {{ if gt (len .Sections) 0 }}
+    <div class="row">
+        {{ range .Sections }}
+        <div class="column">
+            <header>
+                <a href='{{ .Permalink }}'><h2>{{ .Title }}</h2></a>
+            </header>
+            <hr />
+            {{ range .Pages }}   
+                {{ .Render "summary" }}
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    {{ else }}
+        {{ range .Pages }}   
+            {{ .Render "summary" }}
+        {{ end }}
+    {{ end }}
+</section>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer.html" . }}
+{{ end }}

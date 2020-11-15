@@ -1,0 +1,5 @@
+<div>
+    <a href='{{ .Permalink }}'><span class="h4">{{ .Title }}</span></a>
+    {{ if (isset .Params "status") }}{{ partial "status.html" . }}{{ end }}
+    <span>{{ .Summary }}</span>
+</div>

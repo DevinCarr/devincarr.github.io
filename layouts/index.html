@@ -7,9 +7,10 @@
       <p></p>
       <h2>Devin Carr</h2>
       <p></p>
-      <a href="http://www.linkedin.com/in/devincarr/">LinkedIn</a> /
-      <a href="https://github.com/DevinCarr">Github</a> /
-      <a href="/posts/">Posts</a>
+      <a href="https://www.linkedin.com/in/devincarr/">LinkedIn</a> /
+      <a href="https://github.com/DevinCarr">GitHub</a> /
+      <a href="/posts/">Posts</a> /
+      <a href="/tome/">Tome</a>
       <p></p>
     </div> <!-- End Left side -->
     <!-- Content -->
@@ -31,13 +32,13 @@
         <li><a href="/post/echo-a-chat-bot.html">Echo</a>: A Twitch.tv Chat Bot</li>
       </ul>
       <p>
-        There are other random projects on my <a href="https://github.com/DevinCarr">Github</a>.
+        There are other random projects on my <a href="https://github.com/DevinCarr">GitHub</a>.
       </p>
       
       <h4>Recent Posts</h4>
       <hr />
       <div>
-        {{ range first 5 .Site.RegularPages }}
+        {{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
         {{ .Render "summary" }}
         {{ end }}
       </div>
