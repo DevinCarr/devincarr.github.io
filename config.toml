@@ -1,7 +1,7 @@
 baseURL = "http://devincarr.com"
 languageCode = "en-us"
 title = "Devin Carr"
-copyright = "Copyright Devin Carr © 2020"
+copyright = "Copyright Devin Carr © 2021"
 summaryLength = 40
 
 [params]
