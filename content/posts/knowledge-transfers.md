@@ -21,7 +21,7 @@ Every project or feature has a history, be it short or long. An overview of curr
 
 ## 4. Historical Architecture Decisions
 
-Make sure to capture any large decisions however they were concluded to help convey previous context at the beginning of the feature's life. This helps emensely when reviewing foreign code and coming across the: "What the heck is this done this way?" problem.
+Make sure to capture any large decisions however they were concluded to help convey previous context at the beginning of the feature's life. This helps immensely when reviewing foreign code and coming across the: "Why the heck is this done this way?" problem.
 
 ## 5. Points of Contact
 
@@ -35,9 +35,7 @@ Have a knowledge transfer session to provide a simple and approachable forum for
 
 Any questions outlined during the knowledge transfer session can be documented as a Q&A section in the document. This helps any other future owners and improves the document in a quick-and-easy fashion.
 
-# Bonus points
-
-## Small change/improvement
+## 7. Small change/improvement
 
 Encourage the new owner to work through a small improvement in the new area. This is a great opportunity for the old owner to still be available for support while providing hands-on growth in the new area. Sometimes this is difficult if a knowledge transfer is from a departing employee, since they typically don't have the time to assist in a more prolonged transfer.
 
