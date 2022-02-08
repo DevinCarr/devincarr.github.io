@@ -1,9 +1,9 @@
 ---
 title: "Knowledge Transfers"
-date: 2021-11-02T22:04:54-07:00
+date: 2021-11-02T00:00:00-07:00
 ---
 
-Knowledge transfers are rough. Thankfully there are at least two people involved in a knowledge transfer but sometimes inequal effort is put forth from each. Sometimes the knowledge owner is leaving and their mind is already thinking on their next opportunity which leaves their transfer lacking. As a new owner, it is vital that you capture as much information as possible from the previous owner. New owners will struggle with what to question since each project/feature/system is unique and has it's own history or problems it shelters. Following is a short compiled list that: owners should help provide; and initiates should inquire upon.
+Knowledge transfers are rough. Thankfully there are at least two people involved in a knowledge transfer but sometimes unequal effort is put forth from each. Sometimes the knowledge owner is leaving and their mind is already thinking on their next opportunity which leaves their transfer lacking. As a new owner, it is vital that you capture as much information as possible from the previous owner. New owners will struggle with what to question since each project/feature/system is unique and has it's own history or problems it shelters. Following is a short compiled list that: owners should help provide; and initiates should inquire upon.
 
 # How to have a fruitful transfer of knowledge
 
